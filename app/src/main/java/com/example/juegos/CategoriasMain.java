@@ -1,0 +1,54 @@
+package com.example.juegos;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class CategoriasMain extends BaseActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.categorias_main);
+        View headerView = findViewById(R.id.main_header);
+        TextView tituloHeader = headerView.findViewById(R.id.hd_title);
+        tituloHeader.setText("Categorias");
+        configurarLogoInicio();
+        configurarBtnVolver();
+    }
+
+    public void  verEstrategia(View view){
+        Intent intent = new Intent(this, EstrategiasMain.class);
+        startActivity(intent);
+    }
+
+    public void  verRol(View view){
+        Intent intent = new Intent(this, RolMain.class);
+        startActivity(intent);
+    }
+
+    public void  verDeportes(View view){
+        Intent intent = new Intent(this, DeportesMain.class);
+        startActivity(intent);
+    }
+
+    public void  verDisparos(View view){
+        Intent intent = new Intent(this, DisparosMain.class);
+        startActivity(intent);
+    }
+
+    public void  verSimulacion(View view){
+        Intent intent = new Intent(this, SimulacionMain.class);
+        startActivity(intent);
+    }
+
+    public void  verAccion(View view){
+        Intent intent = new Intent(this, AccionMain.class);
+        startActivity(intent);
+    }
+
+}

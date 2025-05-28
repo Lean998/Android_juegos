@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".CategoriasMain">
+
+    <include
+        android:id="@+id/main_header"
+        layout="@layout/header_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="#FFFFFF"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:stretchColumns="0,1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_header">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="0dp"
+                android:layout_height="129dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:padding="8dp"
+                android:background="@drawable/bg_with_border"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/estrategia"
+                android:onClick="verEstrategia"
+                android:src="@drawable/estrategia" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="0dp"
+                android:layout_height="129dp"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:padding="8dp"
+                android:background="@drawable/bg_with_border"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/disparos"
+                android:onClick="verDisparos"
+                android:src="@drawable/disparos" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="0dp"
+                android:layout_height="129dp"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:padding="8dp"
+                android:background="@drawable/bg_with_border"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/accion"
+                android:onClick="verAccion"
+                android:src="@drawable/accion" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="0dp"
+                android:layout_height="129dp"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:padding="8dp"
+                android:background="@drawable/bg_with_border"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/deportes"
+                android:onClick="verDeportes"
+                android:src="@drawable/deportes" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="0dp"
+                android:layout_height="129dp"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:padding="8dp"
+                android:background="@drawable/bg_with_border"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/simulacion"
+                android:onClick="verSimulacion"
+                android:src="@drawable/simulacion" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="0dp"
+                android:layout_height="129dp"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:padding="8dp"
+                android:background="@drawable/bg_with_border"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/rol"
+                android:onClick="verRol"
+                android:src="@drawable/rol" />
+        </TableRow>
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="729dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="0dp"
+    android:background="#FFFFFF"
+    android:orientation="horizontal"
+    android:paddingTop="5dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <ImageView
+        android:id="@+id/btnVolver"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_weight="2"
+        android:background="#FFFFFF"
+        android:contentDescription="@string/categorias"
+        android:onClick="verCategorias"
+        app:srcCompat="@drawable/volver" />
+
+    <TextView
+        android:id="@+id/hd_title"
+        android:layout_width="253dp"
+        android:layout_height="42dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_weight="2"
+        android:contentDescription="@string/app_name"
+        android:onClick="irInicio"
+        app:srcCompat="@drawable/logo" />
+
+</LinearLayout>

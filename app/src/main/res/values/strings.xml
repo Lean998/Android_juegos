@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Juegos</string>
+    <string name="estrategia">Estrategia</string>
+    <string name="disparos">Disparos</string>
+    <string name="accion">Acción</string>
+    <string name="deportes">Deportes</string>
+    <string name="simulacion">Simulación</string>
+    <string name="rol">Rol</string>
+    <string name="categorias">Categorias</string>
+</resources>
