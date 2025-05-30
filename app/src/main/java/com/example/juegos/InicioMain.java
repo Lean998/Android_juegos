@@ -13,16 +13,14 @@ public class InicioMain extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inicio_main);
-        configurarLogoInicio();
-        configurarBtnVolver();
     }
 
-    public void  verInformacion(View view){
+    public void verInformacion(View view){
         Intent intent = new Intent(this, InformacionMain.class);
         startActivity(intent);
     }
 
-    public void  verCategorias(View view){
+    public void verCategorias(View view){
         Intent intent = new Intent(this, CategoriasMain.class);
         startActivity(intent);
     }
