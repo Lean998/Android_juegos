@@ -17,6 +17,11 @@ public class InicioMain extends BaseActivity {
         configurarBtnVolver();
     }
 
+    public void  verInformacion(View view){
+        Intent intent = new Intent(this, InformacionMain.class);
+        startActivity(intent);
+    }
+
     public void  verCategorias(View view){
         Intent intent = new Intent(this, CategoriasMain.class);
         startActivity(intent);
