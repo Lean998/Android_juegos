@@ -14,8 +14,7 @@ public class CategoriasMain extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.categorias_main);
-        View headerView = findViewById(R.id.main_header);
-        TextView tituloHeader = headerView.findViewById(R.id.hd_title);
+        TextView tituloHeader = findViewById(R.id.hd_title);
         tituloHeader.setText("Categorias");
         configurarLogoInicio();
         configurarBtnVolver();
