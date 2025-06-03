@@ -19,4 +19,99 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="#FFFFFF"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:stretchColumns="0,1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_header">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:id="@+id/accionJuego1"
+                android:layout_width="0dp"
+                android:layout_height="129dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:padding="8dp"
+                android:background="@drawable/bg_with_border"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/estrategia"
+                android:onClick="verJuego1"
+                android:src="@drawable/estrategia" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:id="@+id/accionJuego2"
+                android:layout_width="0dp"
+                android:layout_height="129dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:padding="8dp"
+                android:background="@drawable/bg_with_border"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/estrategia"
+                android:onClick="verJuego2"
+                android:src="@drawable/estrategia" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:id="@+id/accionJuego3"
+                android:layout_width="0dp"
+                android:layout_height="129dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:padding="8dp"
+                android:background="@drawable/bg_with_border"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/estrategia"
+                android:onClick="verJuego3"
+                android:src="@drawable/estrategia" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:id="@+id/accionJuego4"
+                android:layout_width="0dp"
+                android:layout_height="129dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:padding="8dp"
+                android:background="@drawable/bg_with_border"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/estrategia"
+                android:onClick="verJuego4"
+                android:src="@drawable/estrategia" />
+        </TableRow>
+
+    </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
