@@ -1,11 +1,9 @@
 package com.example.juegos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class DeportesMain extends BaseActivity {
     @Override
@@ -18,5 +16,13 @@ public class DeportesMain extends BaseActivity {
 
         configurarLogoInicio();
         configurarBtnVolver();
+    }
+    public void verJuego(View view){
+        Intent intent = new Intent(this, JuegoMain.class);
+        View headerView = findViewById(R.id.main_header);
+        TextView tituloHeader = headerView.findViewById(R.id.hd_title);
+        intent.putExtra("TIPO_JUEGO",tituloHeader.getText());
+        intent.putExtra("ID_JUEGO",view.getId());
+        startActivity(intent);
     }
 }

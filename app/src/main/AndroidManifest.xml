@@ -34,6 +34,9 @@
             android:name=".AccionMain">
         </activity>
         <activity
+            android:name=".JuegoMain">
+        </activity>
+        <activity
             android:exported="true"
             android:name=".InicioMain">
             <intent-filter>

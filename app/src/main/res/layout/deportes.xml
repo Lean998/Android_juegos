@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".DisparosMain">
+    tools:context=".DeportesMain">
 
     <include
         android:id="@+id/main_header"
@@ -15,8 +15,186 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:background="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:id="@+id/juego1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:background="#FFFFFF"
+                android:padding="1dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:stretchColumns="0,1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/main_header"
+                app:layout_constraintVertical_bias="0.318">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/botonJuego1"
+                            android:layout_width="379dp"
+                            android:layout_height="128dp"
+                            android:background="@drawable/bg_with_border"
+                            android:contentDescription="JuegoDeporte"
+                            android:onClick="verJuego"
+                            android:padding="8dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/bg_with_border"
+                            android:translationZ="1px" />
+
+                        <TextView
+                            android:id="@+id/tituloJuego1"
+                            android:layout_width="187dp"
+                            android:layout_height="34dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="96dp"
+                            android:layout_marginTop="9dp"
+                            android:layout_marginEnd="96dp"
+                            android:layout_marginBottom="13dp"
+                            android:text="Titulo del Juego1"
+                            android:textAlignment="center"
+                            android:textSize="24sp"
+                            android:translationZ="2dp" />
+
+                        <TextView
+                            android:id="@+id/descripcionJuego1"
+                            android:layout_width="361dp"
+                            android:layout_height="60dp"
+                            android:layout_below="@+id/tituloJuego1"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="9dp"
+                            android:layout_marginTop="9dp"
+                            android:layout_marginEnd="9dp"
+                            android:layout_marginBottom="1dp"
+                            android:paddingStart="1dp"
+                            android:paddingEnd="1dp"
+                            android:paddingBottom="1dp"
+                            android:text="Descripcion del juego numero 1.\nAlargando la descripcion del juego numero 1 de deportes."
+                            android:textAlignment="center"
+                            android:translationY="-9dp"
+                            android:translationZ="2px" />
+
+                    </RelativeLayout>
+                </TableRow>
+
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/juego2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:background="#FFFFFF"
+                android:padding="1dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:stretchColumns="0,1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/main_header"
+                app:layout_constraintVertical_bias="0.318">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/botonJuego2"
+                            android:layout_width="379dp"
+                            android:layout_height="128dp"
+                            android:background="@drawable/bg_with_border"
+                            android:contentDescription="JuegoDeporte"
+                            android:onClick="verJuego"
+                            android:padding="8dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/bg_with_border"
+                            android:translationZ="1px" />
+
+                        <TextView
+                            android:id="@+id/tituloJuego2"
+                            android:layout_width="187dp"
+                            android:layout_height="34dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="96dp"
+                            android:layout_marginTop="9dp"
+                            android:layout_marginEnd="96dp"
+                            android:layout_marginBottom="13dp"
+                            android:text="Titulo del Juego2"
+                            android:textAlignment="center"
+                            android:textSize="24sp"
+                            android:translationZ="2dp" />
+
+                        <TextView
+                            android:id="@+id/descripcionJuego2"
+                            android:layout_width="361dp"
+                            android:layout_height="60dp"
+                            android:layout_below="@+id/tituloJuego2"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="9dp"
+                            android:layout_marginTop="9dp"
+                            android:layout_marginEnd="9dp"
+                            android:layout_marginBottom="1dp"
+                            android:paddingStart="1dp"
+                            android:paddingEnd="1dp"
+                            android:paddingBottom="1dp"
+                            android:text="Descripcion del juego numero 2.\nAlargando la descripcion del juego numero 1 de deportes."
+                            android:textAlignment="center"
+                            android:translationY="-9dp"
+                            android:translationZ="2px" />
+
+                    </RelativeLayout>
+                </TableRow>
+
+            </TableLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
