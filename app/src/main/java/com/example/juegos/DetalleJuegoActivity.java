@@ -32,7 +32,8 @@ public class DetalleJuegoActivity extends AppCompatActivity {
     private boolean mostrandoDescripcion = true;
     private String descripcion = "Este es un gran juego de estrategia...";
     private String categoria;
-    private List<String> estadisticas = new ArrayList<>();
+    private ArrayList<String> estadisticas = new ArrayList<>();
+    private int idJuego;
     private String nombreJuego;
     private ImageView imagenJuego;
     @Override
@@ -44,9 +45,15 @@ public class DetalleJuegoActivity extends AppCompatActivity {
         btnJugar = findViewById(R.id.btnJugar);
         imagenJuego = findViewById(R.id.imagenJuego);
 
+        idJuego = getIntent().getIntExtra("idJuego",-1);
         nombreJuego = getIntent().getStringExtra("nombreJuego");
         categoria = getIntent().getStringExtra("categoria");
 
+        if (idJuego == -1) {
+            Toast.makeText(this, "Error: no se recibió el id del juego", Toast.LENGTH_SHORT).show();
+            finish();
+            return;
+        }
         if (nombreJuego == null) {
             Toast.makeText(this, "Error: no se recibió el nombre del juego", Toast.LENGTH_SHORT).show();
             finish();
@@ -56,17 +63,19 @@ public class DetalleJuegoActivity extends AppCompatActivity {
         btnJugar.setOnClickListener(v -> {
             Intent intent = new Intent(DetalleJuegoActivity.this, SimulacionJuegoActivity.class);
             intent.putExtra("nombreJuego", nombreJuego);
+            intent.putExtra("idJuego", idJuego);
+            intent.putStringArrayListExtra("estadisticas", estadisticas);
             startActivity(intent);
         });
 
         ListView listaPartidas = findViewById(R.id.listaPartidas);
-        List<String> partidas = obtenerPartidasPorJuego(nombreJuego); // asumimos que tenés el nombre del juego
+        estadisticas = obtenerPartidasPorJuego(idJuego); // asumimos que tenés el id del juego
 
-        if (partidas.isEmpty()) {
-            partidas.add("No hay partidas registradas aún.");
+        if (estadisticas.isEmpty()) {
+            estadisticas.add("No hay partidas registradas aún.");
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, partidas);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, estadisticas);
 
         listaPartidas.setAdapter(adapter);
     }
@@ -74,15 +83,17 @@ public class DetalleJuegoActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        String nuevaEstadistica = getIntent().getStringExtra("nuevaEstadistica");
-        if (nuevaEstadistica != null && !estadisticas.contains(nuevaEstadistica)) {
-            estadisticas.add(0, nuevaEstadistica);
-            if (estadisticas.size() > 10) estadisticas.remove(10);
+        ArrayList<String> nuevaEstadisticas = getIntent().getStringArrayListExtra("estadisticas");
+        if (nuevaEstadisticas != null && !estadisticas.equals(nuevaEstadisticas)) {
+            estadisticas = nuevaEstadisticas;
+            ListView listaPartidas = findViewById(R.id.listaPartidas);
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, estadisticas);
+            listaPartidas.setAdapter(adapter);
         }
     }
 
-    public List<String> obtenerPartidasPorJuego(String nombreJuego) {
-        List<String> listaPartidas = new ArrayList<>();
+    public ArrayList<String> obtenerPartidasPorJuego(int idJuego) {
+        ArrayList<String> listaPartidas = new ArrayList<>();
 
         DBPartidaHelper dbHelper = new DBPartidaHelper(this);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -95,14 +106,13 @@ public class DetalleJuegoActivity extends AppCompatActivity {
                 DBPartidaHelper.COLUMN_FECHA
         };
 
-        String seleccion = DBPartidaHelper.COLUMN_JUEGO + " = ?";
-        String[] argumentos = { nombreJuego };
+        String seleccion = DBPartidaHelper.COLUMN_IDJUEGO + " = " + idJuego;
 
         Cursor cursor = db.query(
                 DBPartidaHelper.TABLE_PARTIDAS,
                 columnas,
                 seleccion,
-                argumentos,
+                null,
                 null,
                 null,
                 DBPartidaHelper.COLUMN_FECHA + " DESC",
@@ -118,7 +128,7 @@ public class DetalleJuegoActivity extends AppCompatActivity {
 
             String resultado = "Jugador: " + jugador +
                     "\nDificultad: " + dificultad +
-                    "\nNivel: " + nivel +
+                    "\n" + nivel +
                     "\nPuntaje: " + puntaje +
                     "\nFecha: " + fecha;
 
@@ -126,7 +136,6 @@ public class DetalleJuegoActivity extends AppCompatActivity {
         }
 
         cursor.close();
-        db.close();
 
         return listaPartidas;
     }

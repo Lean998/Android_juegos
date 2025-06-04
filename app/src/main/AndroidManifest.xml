@@ -36,9 +36,7 @@
         <activity android:name=".DetalleJuegoActivity" />
         <activity android:name=".SimulacionJuegoActivity" />
 
-        <activity
-            android:name=".Juego1">
-        </activity>
+
         <activity
             android:name=".InformacionMain">
         </activity>

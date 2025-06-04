@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
@@ -60,7 +61,13 @@ public class SimulacionJuegoActivity extends AppCompatActivity{
 
         String complejidad = spinnerComplejidad.getSelectedItem().toString();
         String nivel = spinnerNivel.getSelectedItem().toString();
-        String nombreJuego = getIntent().getStringExtra("nombreJuego");
+        int idJuego = getIntent().getIntExtra("idJuego",-1);
+        ArrayList<String> estadisticas = getIntent().getStringArrayListExtra("estadisticas");
+
+        if(idJuego == -1){
+            Toast.makeText(this, "Error inesperado al finalizar la partida", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         int puntaje;
         try {
@@ -70,35 +77,42 @@ public class SimulacionJuegoActivity extends AppCompatActivity{
             return;
         }
 
-        guardarPartida(nombre, nombreJuego, complejidad, nivel, puntaje);
+        guardarPartida(nombre, idJuego, complejidad, nivel, puntaje);
 
         String resumen = "Jugador: " + nombre +
-                "\nJuego: " + nombreJuego +
-                "\nComplejidad: " + complejidad +
+                "\nDificultad: " + complejidad +
                 "\n" + nivel +
-                "\nPuntaje: " + puntaje;
+                "\nPuntaje: " + puntaje +
+                "\nFecha: " + obtenerFechaActual();
+
+        try{
+            estadisticas.add(0,resumen);
+        }catch(NullPointerException e){}
+
+        try {
+            estadisticas.remove(10);
+        }catch(IndexOutOfBoundsException e){}
+
 
         Intent intent = new Intent(this, DetalleJuegoActivity.class);
-        intent.putExtra("nombreJuego", nombreJuego);
-        intent.putExtra("nuevaEstadistica", resumen);
+        intent.putExtra("idJuego", idJuego);
+        intent.putExtra("estadisticas", estadisticas);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(intent);
         finish();
     }
 
-    public void guardarPartida(String nombreJugador, String juego, String dificultad, String nivel, int puntos) {
-        String fechaActual = obtenerFechaActual();
+    public void guardarPartida(String nombreJugador, int idJuego, String dificultad, String nivel, int puntos) {
 
         DBPartidaHelper dbHelper = new DBPartidaHelper(this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
         values.put(DBPartidaHelper.COLUMN_JUGADOR, nombreJugador);
-        values.put(DBPartidaHelper.COLUMN_JUEGO, juego);
+        values.put(DBPartidaHelper.COLUMN_IDJUEGO, idJuego);
         values.put(DBPartidaHelper.COLUMN_DIFICULTAD, dificultad);
         values.put(DBPartidaHelper.COLUMN_NIVEL, nivel);
         values.put(DBPartidaHelper.COLUMN_PUNTAJE, puntos);
-        values.put(DBPartidaHelper.COLUMN_FECHA, fechaActual);
 
         long resultado = db.insert(DBPartidaHelper.TABLE_PARTIDAS, null, values);
 
@@ -108,9 +122,7 @@ public class SimulacionJuegoActivity extends AppCompatActivity{
             Toast.makeText(this, "Error al guardar la partida", Toast.LENGTH_SHORT).show();
         }
 
-        db.close();
     }
-
 
     private String obtenerFechaActual() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());

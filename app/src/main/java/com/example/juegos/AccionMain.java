@@ -21,7 +21,7 @@ public class AccionMain extends BaseActivity {
     }
 
     public void  verJuego1(View view){
-        Intent intent = new Intent(this, Juego1.class);
+        Intent intent = new Intent(this, CategoriasMain.class);
         startActivity(intent);
     }
     public void  verJuego2(View view){
