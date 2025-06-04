@@ -33,6 +33,16 @@
         <activity
             android:name=".AccionMain">
         </activity>
+        <activity android:name=".DetalleJuegoActivity" />
+        <activity android:name=".SimulacionJuegoActivity" />
+
+
+        <activity
+            android:name=".InformacionMain">
+        </activity>
+        <activity
+            android:name=".BaseActivity">
+        </activity>
         <activity
             android:name=".JuegoMain">
         </activity>

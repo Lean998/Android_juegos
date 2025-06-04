@@ -1,5 +1,6 @@
 package com.example.juegos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -17,5 +18,22 @@ public class AccionMain extends BaseActivity {
         tituloHeader.setText("Accion");
         configurarLogoInicio();
         configurarBtnVolver();
+    }
+
+    public void  verJuego1(View view){
+        Intent intent = new Intent(this, CategoriasMain.class);
+        startActivity(intent);
+    }
+    public void  verJuego2(View view){
+        Intent intent = new Intent(this, CategoriasMain.class);
+        startActivity(intent);
+    }
+    public void  verJuego3(View view){
+        Intent intent = new Intent(this, CategoriasMain.class);
+        startActivity(intent);
+    }
+    public void  verJuego4(View view){
+        Intent intent = new Intent(this, CategoriasMain.class);
+        startActivity(intent);
     }
 }

@@ -19,4 +19,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="145dp"
+        android:orientation="vertical"
+        android:padding="100dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-16dp">
+
+        <Button
+            android:id="@+id/btnJuego1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Juego de Estrategia 1" />
+
+        <Button
+            android:id="@+id/btnJuego2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Juego de Estrategia 2" />
+
+        <Button
+            android:id="@+id/btnJuego3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Juego de Estrategia 3" />
+
+        <Button
+            android:id="@+id/btnJuego4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Juego de Estrategia 4" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
