@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="#FFFFFF"
     tools:context=".EstrategiasMain">
 
@@ -20,40 +20,23 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="145dp"
+        android:id="@+id/btnsJuegos"
+        android:layout_width="410dp"
+        android:layout_height="598dp"
+        android:layout_marginTop="76dp"
         android:orientation="vertical"
-        android:padding="100dp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-16dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/btnJuego1"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerJuegos"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Juego de Estrategia 1" />
+            android:layout_height="match_parent"
+            android:layout_margin="50dp"
+            android:clipToPadding="false" />
 
-        <Button
-            android:id="@+id/btnJuego2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Juego de Estrategia 2" />
-
-        <Button
-            android:id="@+id/btnJuego3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Juego de Estrategia 3" />
-
-        <Button
-            android:id="@+id/btnJuego4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Juego de Estrategia 4" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,7 +14,7 @@ public class DBPartidaHelper extends SQLiteOpenHelper {
     public static final String COLUMN_ID = "id";
     public static final String COLUMN_JUGADOR = "jugador";
     public static final String COLUMN_IDJUEGO = "idJuego";
-    public static final String COLUMN_JUEGO = "juego";
+    public static final String COLUMN_NOMBRE = "nombre";
     public static final String COLUMN_DESCRIPCION = "descripcion";
     public static final String COLUMN_GENERO = "genero";
     public static final String COLUMN_DIFICULTAD = "dificultad";
@@ -26,7 +26,7 @@ public class DBPartidaHelper extends SQLiteOpenHelper {
     private static final String TABLE_CREATE_JUEGOS =
             "CREATE TABLE " + TABLE_JUEGOS + " (" +
                     COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    COLUMN_JUEGO + " VARCHAR(50) NOT NULL, " +
+                    COLUMN_NOMBRE + " VARCHAR(50) NOT NULL, " +
                     COLUMN_DESCRIPCION + " VARCHAR(100) NOT NULL, " +
                     COLUMN_GENERO + " VARCHAR(50) NOT NULL, " +
                     COLUMN_NIVELES + " INTEGER NOT NULL " +
@@ -34,7 +34,7 @@ public class DBPartidaHelper extends SQLiteOpenHelper {
 
     private static final String TABLE_FILL_JUEGOS =
             "INSERT INTO " + TABLE_JUEGOS + " (" +
-                    COLUMN_JUEGO + ", " +
+                    COLUMN_NOMBRE + ", " +
                     COLUMN_DESCRIPCION + ", " +
                     COLUMN_GENERO + ", " +
                     COLUMN_NIVELES +

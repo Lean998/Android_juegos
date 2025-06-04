@@ -1,14 +1,17 @@
 package com.example.juegos;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.Intent;
-import android.widget.Button;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import androidx.appcompat.app.AppCompatActivity;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EstrategiasMain extends BaseActivity {
     @Override
@@ -22,17 +25,26 @@ public class EstrategiasMain extends BaseActivity {
         configurarLogoInicio();
         configurarBtnVolver();
 
-        Button btnJuego1, btnJuego2, btnJuego3, btnJuego4;
+        List<JuegoClass> listaJuegos=new ArrayList<>();
 
-        btnJuego1 = findViewById(R.id.btnJuego1);
-        btnJuego2 = findViewById(R.id.btnJuego2);
-        btnJuego3 = findViewById(R.id.btnJuego3);
-        btnJuego4 = findViewById(R.id.btnJuego4);
+        RecyclerView recyclerJuegos = findViewById(R.id.recyclerJuegos);
+        recyclerJuegos.setLayoutManager(new LinearLayoutManager(this));
 
-        btnJuego1.setOnClickListener(v -> abrirJuego(0,"Juego1"));
-        btnJuego2.setOnClickListener(v -> abrirJuego(1,"Juego2"));
-        btnJuego3.setOnClickListener(v -> abrirJuego(2,"Juego3"));
-        btnJuego4.setOnClickListener(v -> abrirJuego(3,"Juego4"));
+        DBPartidaHelper dbHelper = new DBPartidaHelper(this);
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT id, nombre, descripcion, niveles FROM juegos WHERE genero = 'Estrategia'", null);
+        while (cursor.moveToNext()) {
+            int id = cursor.getInt(0);
+            String nombre = cursor.getString(1);
+            String descripcion = cursor.getString(2);
+            int niveles = cursor.getInt(3);
+            listaJuegos.add(new JuegoClass(id, nombre, descripcion,"",niveles,v -> abrirJuego(id,nombre)));
+        }
+        cursor.close();
+
+        btnJuegoAdapter adapter = new btnJuegoAdapter(listaJuegos);
+        recyclerJuegos.setAdapter(adapter);
+
     }
     private void abrirJuego(int idJuego, String nombreJuego) {
         Intent intent = new Intent(this, com.example.juegos.DetalleJuegoActivity.class);

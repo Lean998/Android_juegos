@@ -14,7 +14,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.juegos.BaseActivity;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -25,7 +24,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DetalleJuegoActivity extends AppCompatActivity {
+public class DetalleJuegoActivity extends BaseActivity {
 
     private TextView textoInfo;
     private Button btnAlternar, btnJugar;
@@ -40,6 +39,9 @@ public class DetalleJuegoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_juego);
+
+        configurarLogoInicio();
+        configurarBtnVolver();
 
         textoInfo = findViewById(R.id.textoInfo);
         btnJugar = findViewById(R.id.btnJugar);
