@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 public class SimulacionJuegoActivity extends AppCompatActivity{
@@ -41,11 +42,16 @@ public class SimulacionJuegoActivity extends AppCompatActivity{
         adapterComplejidad.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerComplejidad.setAdapter(adapterComplejidad);
 
-        ArrayAdapter<String> adapterNivel = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item,
-                new String[]{"Nivel 1", "Nivel 2", "Nivel 3", "Nivel 4", "Nivel 5", "Nivel 6", "Nivel 7", "Nivel 8", "Nivel 9", "Nivel 10"});
-        adapterNivel.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerNivel.setAdapter(adapterNivel);
+        int niveles= getIntent().getIntExtra("nivelesJuego",-1);
+        if(niveles!=-1){
+            List<String> listNiveles=new ArrayList<>();
+            for (int i=0;i<niveles;i++){
+                listNiveles.add("Nivel "+(i+1));
+            }
+            ArrayAdapter<String> adapterNivel = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,listNiveles);
+            adapterNivel.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinnerNivel.setAdapter(adapterNivel);
+        }
 
         btnFinalizar.setOnClickListener(v -> finalizarPartida());
     }

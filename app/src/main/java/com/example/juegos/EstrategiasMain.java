@@ -38,7 +38,7 @@ public class EstrategiasMain extends BaseActivity {
             String nombre = cursor.getString(1);
             String descripcion = cursor.getString(2);
             int niveles = cursor.getInt(3);
-            listaJuegos.add(new JuegoClass(id, nombre, descripcion,"",niveles,v -> abrirJuego(id,nombre)));
+            listaJuegos.add(new JuegoClass(id, nombre, descripcion,"Estrategia",niveles,v -> abrirJuego(id,nombre,descripcion,niveles)));
         }
         cursor.close();
 
@@ -46,10 +46,12 @@ public class EstrategiasMain extends BaseActivity {
         recyclerJuegos.setAdapter(adapter);
 
     }
-    private void abrirJuego(int idJuego, String nombreJuego) {
+    private void abrirJuego(int idJuego, String nombreJuego, String descripcionJuego, int nivelesJuego) {
         Intent intent = new Intent(this, com.example.juegos.DetalleJuegoActivity.class);
         intent.putExtra("idJuego",idJuego);
         intent.putExtra("nombreJuego", nombreJuego);
+        intent.putExtra("descripcionJuego", descripcionJuego);
+        intent.putExtra("nivelesJuego", nivelesJuego);
         intent.putExtra("categoria", "Estrategia");
         startActivity(intent);
     }

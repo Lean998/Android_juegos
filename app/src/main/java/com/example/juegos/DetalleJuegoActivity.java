@@ -29,11 +29,12 @@ public class DetalleJuegoActivity extends BaseActivity {
     private TextView textoInfo;
     private Button btnAlternar, btnJugar;
     private boolean mostrandoDescripcion = true;
-    private String descripcion = "Este es un gran juego de estrategia...";
+    private String descripcionJuego;
     private String categoria;
     private ArrayList<String> estadisticas = new ArrayList<>();
     private int idJuego;
     private String nombreJuego;
+    private int niveles;
     private ImageView imagenJuego;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +50,10 @@ public class DetalleJuegoActivity extends BaseActivity {
 
         idJuego = getIntent().getIntExtra("idJuego",-1);
         nombreJuego = getIntent().getStringExtra("nombreJuego");
+        descripcionJuego = getIntent().getStringExtra("descripcionJuego");
         categoria = getIntent().getStringExtra("categoria");
+        niveles= getIntent().getIntExtra("nivelesJuego",-1);
+        textoInfo.setText(descripcionJuego);
 
         if (idJuego == -1) {
             Toast.makeText(this, "Error: no se recibió el id del juego", Toast.LENGTH_SHORT).show();
@@ -61,11 +65,17 @@ public class DetalleJuegoActivity extends BaseActivity {
             finish();
             return;
         }
+        if (niveles == -1) {
+            Toast.makeText(this, "Error: no se recibieron los niveles del juego", Toast.LENGTH_SHORT).show();
+            finish();
+            return;
+        }
 
         btnJugar.setOnClickListener(v -> {
             Intent intent = new Intent(DetalleJuegoActivity.this, SimulacionJuegoActivity.class);
             intent.putExtra("nombreJuego", nombreJuego);
             intent.putExtra("idJuego", idJuego);
+            intent.putExtra("nivelesJuego",niveles);
             intent.putStringArrayListExtra("estadisticas", estadisticas);
             startActivity(intent);
         });
