@@ -16,27 +16,16 @@
             android:name=".CategoriasMain">
         </activity>
         <activity
-            android:name=".EstrategiasMain">
-        </activity>
-        <activity
-            android:name=".RolMain">
+            android:name=".CategoriaMain">
         </activity>
         <activity
             android:name=".DeportesMain">
-        </activity>
-        <activity
-            android:name=".DisparosMain">
-        </activity>
-        <activity
-            android:name=".SimulacionMain">
         </activity>
         <activity
             android:name=".AccionMain">
         </activity>
         <activity android:name=".DetalleJuegoActivity" />
         <activity android:name=".SimulacionJuegoActivity" />
-
-
         <activity
             android:name=".InformacionMain">
         </activity>

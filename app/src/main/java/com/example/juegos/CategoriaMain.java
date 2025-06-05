@@ -13,14 +13,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EstrategiasMain extends BaseActivity {
+public class CategoriaMain extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.estrategias_main);
+        Intent intent = getIntent();
+        String categoria = intent.getStringExtra("categoria");
+        setContentView(R.layout.categoria_main);
         View headerView = findViewById(R.id.main_header);
         TextView tituloHeader = headerView.findViewById(R.id.hd_title);
-        tituloHeader.setText("Estrategia");
+        tituloHeader.setText(categoria);
 
         configurarLogoInicio();
         configurarBtnVolver();
@@ -32,13 +34,13 @@ public class EstrategiasMain extends BaseActivity {
 
         DBPartidaHelper dbHelper = new DBPartidaHelper(this);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT id, nombre, descripcion, niveles FROM juegos WHERE genero = 'Estrategia'", null);
+        Cursor cursor = db.rawQuery("SELECT id, nombre, descripcion, niveles FROM juegos WHERE genero = ?", new String[]{categoria});
         while (cursor.moveToNext()) {
             int id = cursor.getInt(0);
             String nombre = cursor.getString(1);
             String descripcion = cursor.getString(2);
             int niveles = cursor.getInt(3);
-            listaJuegos.add(new JuegoClass(id, nombre, descripcion,"Estrategia",niveles,v -> abrirJuego(id,nombre,descripcion,niveles)));
+            listaJuegos.add(new JuegoClass(id, nombre, descripcion,categoria,niveles,v -> abrirJuego(id,nombre,descripcion,categoria,niveles)));
         }
         cursor.close();
 
@@ -46,13 +48,13 @@ public class EstrategiasMain extends BaseActivity {
         recyclerJuegos.setAdapter(adapter);
 
     }
-    private void abrirJuego(int idJuego, String nombreJuego, String descripcionJuego, int nivelesJuego) {
+    private void abrirJuego(int idJuego, String nombreJuego, String descripcionJuego, String categoriaJuego , int nivelesJuego) {
         Intent intent = new Intent(this, com.example.juegos.DetalleJuegoActivity.class);
         intent.putExtra("idJuego",idJuego);
         intent.putExtra("nombreJuego", nombreJuego);
         intent.putExtra("descripcionJuego", descripcionJuego);
         intent.putExtra("nivelesJuego", nivelesJuego);
-        intent.putExtra("categoria", "Estrategia");
+        intent.putExtra("categoria", categoriaJuego);
         startActivity(intent);
     }
 }

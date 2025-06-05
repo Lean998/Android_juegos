@@ -50,7 +50,8 @@
                 android:background="@drawable/bg_with_border"
                 android:scaleType="fitCenter"
                 android:contentDescription="@string/estrategia"
-                android:onClick="verEstrategia"
+                android:onClick="verCategoria"
+                android:tag="@string/estrategia"
                 android:src="@drawable/estrategia" />
 
             <ImageView
@@ -63,7 +64,8 @@
                 android:background="@drawable/bg_with_border"
                 android:scaleType="fitCenter"
                 android:contentDescription="@string/disparos"
-                android:onClick="verDisparos"
+                android:onClick="verCategoria"
+                android:tag="@string/disparos"
                 android:src="@drawable/disparos" />
         </TableRow>
 
@@ -83,7 +85,8 @@
                 android:background="@drawable/bg_with_border"
                 android:scaleType="fitCenter"
                 android:contentDescription="@string/accion"
-                android:onClick="verAccion"
+                android:onClick="verCategoria"
+                android:tag="@string/accion"
                 android:src="@drawable/accion" />
 
             <ImageView
@@ -96,7 +99,8 @@
                 android:background="@drawable/bg_with_border"
                 android:scaleType="fitCenter"
                 android:contentDescription="@string/deportes"
-                android:onClick="verDeportes"
+                android:onClick="verCategoria"
+                android:tag="@string/deportes"
                 android:src="@drawable/deportes" />
         </TableRow>
 
@@ -116,7 +120,8 @@
                 android:background="@drawable/bg_with_border"
                 android:scaleType="fitCenter"
                 android:contentDescription="@string/simulacion"
-                android:onClick="verSimulacion"
+                android:onClick="verCategoria"
+                android:tag="@string/simulacion"
                 android:src="@drawable/simulacion" />
 
             <ImageView
@@ -129,7 +134,8 @@
                 android:background="@drawable/bg_with_border"
                 android:scaleType="fitCenter"
                 android:contentDescription="@string/rol"
-                android:onClick="verRol"
+                android:onClick="verCategoria"
+                android:tag="@string/rol"
                 android:src="@drawable/rol" />
         </TableRow>
     </TableLayout>
