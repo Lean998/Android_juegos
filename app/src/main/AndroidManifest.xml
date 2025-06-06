@@ -36,6 +36,7 @@
             android:name=".JuegoMain">
         </activity>
         <activity
+            android:screenOrientation="portrait"
             android:exported="true"
             android:name=".InicioMain">
             <intent-filter>

@@ -40,7 +40,7 @@ public class CategoriaMain extends BaseActivity {
             String nombre = cursor.getString(1);
             String descripcion = cursor.getString(2);
             int niveles = cursor.getInt(3);
-            listaJuegos.add(new JuegoClass(id, nombre, descripcion,categoria,niveles,v -> abrirJuego(id,nombre,descripcion,categoria,niveles)));
+            listaJuegos.add(new JuegoClass(id, nombre, descripcion, "", niveles,v -> abrirJuego(id,nombre,descripcion,categoria,niveles)));
         }
         cursor.close();
 

@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,9 +31,7 @@ public class btnJuegoAdapter extends RecyclerView.Adapter<btnJuegoAdapter.btnJue
     @Override
     public void onBindViewHolder(@NonNull btnJuegoViewHolder holder, int position) {
         JuegoClass juego = listaJuegos.get(position);
-        holder.btnJuego.setText(juego.getNombre());
-        String nombreJuego = juego.getNombre();
-        holder.btnJuego.setText(nombreJuego);
+        holder.tituloJuego.setText(juego.getNombre());
         holder.btnJuego.setTag(position); // Para identificar si hace falta
         holder.btnJuego.setOnClickListener(juego.getListener());
     }
@@ -42,10 +42,12 @@ public class btnJuegoAdapter extends RecyclerView.Adapter<btnJuegoAdapter.btnJue
     }
 
     static class btnJuegoViewHolder extends RecyclerView.ViewHolder {
-        Button btnJuego;
+        ImageView btnJuego;
+        TextView tituloJuego;
         public btnJuegoViewHolder(@NonNull View itemView) {
             super(itemView);
             btnJuego = itemView.findViewById(R.id.btnJuego);
+            tituloJuego=itemView.findViewById(R.id.tituloJuego);
         }
     }
 }
