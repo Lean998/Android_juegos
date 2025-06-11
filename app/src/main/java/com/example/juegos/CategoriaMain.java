@@ -45,7 +45,7 @@ public class CategoriaMain extends BaseActivity {
             listaJuegos.add(new JuegoClass(id, nombre, descripcion, "", niveles,v -> abrirJuego(id,nombre,descripcion,categoria,niveles)));
         }
         cursor.close();
-        Log.d("CategoriaMain", "Cantidad de juegos encontrados: " + listaJuegos.size());
+
         btnJuegoAdapter adapter = new btnJuegoAdapter(listaJuegos);
         recyclerJuegos.setAdapter(adapter);
 

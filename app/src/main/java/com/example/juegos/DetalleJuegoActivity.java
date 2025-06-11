@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -84,8 +83,6 @@ public class DetalleJuegoActivity extends BaseActivity {
             startActivity(intent);
         });
 
-        Log.d("DEBUG", "Juegos encontrados: " + juegosMismaCategoria.size());
-        Log.d("DEBUG", "Lanzando DetalleJuegoActivity con idJuego: " + idJuego);
     }
 
     private void inicializarNavegacionViewPager() {
