@@ -64,11 +64,13 @@ public class SimulacionJuegoActivity extends AppCompatActivity{
             Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show();
             return;
         }
-
+        if (Integer.parseInt(puntajeTexto) > 1000) {
+            Toast.makeText(this, "Puntaje maximo 1000", Toast.LENGTH_SHORT).show();
+            return;
+        }
         String complejidad = spinnerComplejidad.getSelectedItem().toString();
         String nivel = spinnerNivel.getSelectedItem().toString();
         int idJuego = getIntent().getIntExtra("idJuego",-1);
-        ArrayList<String> estadisticas = getIntent().getStringArrayListExtra("estadisticas");
 
         if(idJuego == -1){
             Toast.makeText(this, "Error inesperado al finalizar la partida", Toast.LENGTH_SHORT).show();
@@ -84,25 +86,8 @@ public class SimulacionJuegoActivity extends AppCompatActivity{
         }
 
         guardarPartida(nombre, idJuego, complejidad, nivel, puntaje);
-
-        String resumen = "Jugador: " + nombre +
-                "\nDificultad: " + complejidad +
-                "\n" + nivel +
-                "\nPuntaje: " + puntaje +
-                "\nFecha: " + obtenerFechaActual();
-
-        try{
-            estadisticas.add(0,resumen);
-        }catch(NullPointerException e){}
-
-        try {
-            estadisticas.remove(10);
-        }catch(IndexOutOfBoundsException e){}
-
-
         Intent intent = new Intent(this, DetalleJuegoActivity.class);
         intent.putExtra("idJuego", idJuego);
-        intent.putExtra("estadisticas", estadisticas);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(intent);
         finish();
@@ -127,12 +112,5 @@ public class SimulacionJuegoActivity extends AppCompatActivity{
         } else {
             Toast.makeText(this, "Error al guardar la partida", Toast.LENGTH_SHORT).show();
         }
-
     }
-
-    private String obtenerFechaActual() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
-        return sdf.format(new Date());
-    }
-
 }

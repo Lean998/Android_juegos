@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:orientation="vertical"
         android:padding="10dp"
         android:layout_marginTop="240dp"
@@ -30,11 +31,13 @@
 
         <EditText
             android:id="@+id/etPuntaje"
-            android:hint="Puntaje obtenido"
-            android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp" />
+            android:layout_marginTop="12dp"
+            android:hint="Puntaje obtenido"
+            android:inputType="number"
+            android:ems="10"
+            android:maxLength="1000"/>
 
         <Button
             android:id="@+id/btnFinalizar"
@@ -44,4 +47,5 @@
             android:layout_marginTop="16dp"
             android:onClick="finalizarPartida"/>
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
