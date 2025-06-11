@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:id="@+id/imagenJuego"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:contentDescription="Imagen del juego"
+        android:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/textoInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Descripción del juego..."
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnJugar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Jugar" />
+
+    <Button
+        android:id="@+id/btnEstadisticas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Estadisticas" />
+
+</LinearLayout>

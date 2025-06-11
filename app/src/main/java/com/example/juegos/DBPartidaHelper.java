@@ -47,7 +47,17 @@ public class DBPartidaHelper extends SQLiteOpenHelper {
                     "('Estrategia6', 'Descripcion Estrategia6', 'Estrategia', 10)," +
                     "('Estrategia7', 'Descripcion Estrategia7', 'Estrategia', 10)," +
                     "('Estrategia8', 'Descripcion Estrategia8', 'Estrategia', 10)," +
-                    "('Estrategia9', 'Descripcion Estrategia9', 'Estrategia', 10)";
+                    "('Estrategia9', 'Descripcion Estrategia9', 'Estrategia', 10)," +
+                    "('Deportes1', 'Descripcion Deportes1', 'Deportes', 10)," +
+                    "('Deportes2', 'Descripcion Deportes2', 'Deportes', 10)," +
+                    "('Deportes3', 'Descripcion Deportes3', 'Deportes', 10)," +
+                    "('Deportes4', 'Descripcion Deportes4', 'Deportes', 10)," +
+                    "('Deportes5', 'Descripcion Deportes5', 'Deportes', 10)";
+
+
+
+
+
     private static final String TABLE_CREATE_PARTIDAS =
             "CREATE TABLE " + TABLE_PARTIDAS + " (" +
                     COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +

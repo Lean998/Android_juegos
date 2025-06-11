@@ -3,6 +3,7 @@ package com.example.juegos;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.content.Intent;
@@ -34,6 +35,7 @@ public class CategoriaMain extends BaseActivity {
 
         DBPartidaHelper dbHelper = new DBPartidaHelper(this);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Log.d("CategoriaMain", "CATEGORIA RECIBIDA: " + categoria);
         Cursor cursor = db.rawQuery("SELECT id, nombre, descripcion, niveles FROM juegos WHERE genero = ?", new String[]{categoria});
         while (cursor.moveToNext()) {
             int id = cursor.getInt(0);
@@ -43,9 +45,10 @@ public class CategoriaMain extends BaseActivity {
             listaJuegos.add(new JuegoClass(id, nombre, descripcion, "", niveles,v -> abrirJuego(id,nombre,descripcion,categoria,niveles)));
         }
         cursor.close();
-
+        Log.d("CategoriaMain", "Cantidad de juegos encontrados: " + listaJuegos.size());
         btnJuegoAdapter adapter = new btnJuegoAdapter(listaJuegos);
         recyclerJuegos.setAdapter(adapter);
+
 
     }
     private void abrirJuego(int idJuego, String nombreJuego, String descripcionJuego, String categoriaJuego , int nivelesJuego) {
