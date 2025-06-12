@@ -8,7 +8,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.TimeZone;
 
 public class EstadisticasJuego extends BaseActivity{
     private ArrayList<String> estadisticas = new ArrayList<>();
@@ -58,18 +62,30 @@ public class EstadisticasJuego extends BaseActivity{
                 "10" // <--- Límite de 10 resultados
         );
 
+        SimpleDateFormat sdfUTC = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        sdfUTC.setTimeZone(TimeZone.getTimeZone("UTC"));
+
+        SimpleDateFormat sdfLocal = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        sdfLocal.setTimeZone(TimeZone.getTimeZone("GMT-3"));
+
         while (cursor.moveToNext()) {
             String jugador = cursor.getString(0);
             String dificultad = cursor.getString(1);
             String nivel = cursor.getString(2);
             int puntaje = cursor.getInt(3);
             String fecha = cursor.getString(4);
-
+            String fechaFormateada = fecha;
+            try {
+                Date fechaUTC = sdfUTC.parse(fecha);
+                fechaFormateada = sdfLocal.format(fechaUTC);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
             String resultado = "Jugador: " + jugador +
                     "\nDificultad: " + dificultad +
                     "\n" + nivel +
                     "\nPuntaje: " + puntaje +
-                    "\nFecha: " + fecha;
+                    "\nFecha: " + fechaFormateada;
 
             listaPartidas.add(resultado);
         }

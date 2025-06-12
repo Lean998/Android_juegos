@@ -48,11 +48,43 @@ public class DBPartidaHelper extends SQLiteOpenHelper {
                     "('Estrategia7', 'Descripcion Estrategia7', 'Estrategia', 10)," +
                     "('Estrategia8', 'Descripcion Estrategia8', 'Estrategia', 10)," +
                     "('Estrategia9', 'Descripcion Estrategia9', 'Estrategia', 10)," +
+
+                    "('Disparos1', 'Descripcion Disparos1', 'Disparos', 10)," +
+                    "('Disparos2', 'Descripcion Disparos2', 'Disparos', 10)," +
+                    "('Disparos3', 'Descripcion Disparos3', 'Disparos', 10)," +
+                    "('Disparos4', 'Descripcion Disparos4', 'Disparos', 10)," +
+                    "('Disparos5', 'Descripcion Disparos5', 'Disparos', 10)," +
+                    "('Disparos6', 'Descripcion Disparos6', 'Disparos', 10)," +
+
+                    "('Acción1', 'Descripcion Acción1', 'Acción', 10)," +
+                    "('Acción2', 'Descripcion Acción2', 'Acción', 10)," +
+                    "('Acción3', 'Descripcion Acción3', 'Acción', 10)," +
+                    "('Acción4', 'Descripcion Acción4', 'Acción', 10)," +
+                    "('Acción5', 'Descripcion Acción5', 'Acción', 10)," +
+                    "('Acción6', 'Descripcion Acción6', 'Acción', 10)," +
+
                     "('Deportes1', 'Descripcion Deportes1', 'Deportes', 10)," +
                     "('Deportes2', 'Descripcion Deportes2', 'Deportes', 10)," +
                     "('Deportes3', 'Descripcion Deportes3', 'Deportes', 10)," +
                     "('Deportes4', 'Descripcion Deportes4', 'Deportes', 10)," +
-                    "('Deportes5', 'Descripcion Deportes5', 'Deportes', 10)";
+                    "('Deportes5', 'Descripcion Deportes5', 'Deportes', 10)," +
+                    "('Deportes6', 'Descripcion Deportes6', 'Deportes', 10)," +
+
+                    "('Simulación1', 'Descripcion Simulación1', 'Simulación', 10)," +
+                    "('Simulación2', 'Descripcion Simulación2', 'Simulación', 10)," +
+                    "('Simulación3', 'Descripcion Simulación3', 'Simulación', 10)," +
+                    "('Simulación4', 'Descripcion Simulación4', 'Simulación', 10)," +
+                    "('Simulación5', 'Descripcion Simulación5', 'Simulación', 10)," +
+                    "('Simulación6', 'Descripcion Simulación6', 'Simulación', 10)," +
+
+                    "('Rol1', 'Descripcion Rol1', 'Rol', 10)," +
+                    "('Rol2', 'Descripcion Rol2', 'Rol', 10)," +
+                    "('Rol3', 'Descripcion Rol3', 'Rol', 10)," +
+                    "('Rol4', 'Descripcion Rol4', 'Rol', 10)," +
+                    "('Rol5', 'Descripcion Rol5', 'Rol', 10)," +
+                    "('Rol6', 'Descripcion Rol6', 'Rol', 10)"
+
+            ;
 
 
 

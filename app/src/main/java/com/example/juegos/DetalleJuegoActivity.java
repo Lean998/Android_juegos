@@ -146,7 +146,6 @@ public class DetalleJuegoActivity extends BaseActivity {
         }
 
         cursor.close();
-        db.close();
     }
 
     private void actualizarJuegoActual() {

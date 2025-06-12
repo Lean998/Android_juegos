@@ -15,35 +15,29 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected void configurarLogoInicio() {
-        View headerView = findViewById(R.id.main_header);
-        if (headerView != null) {
-            ImageView logo = headerView.findViewById(R.id.imageView);
-            if (logo != null) {
-                logo.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(BaseActivity.this, InicioMain.class);
-                        // Evita duplicados en el back stack
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                        startActivity(intent);
-                    }
-                });
-            }
+        ImageView logo = findViewById(R.id.imageView);
+        if (logo != null) {
+            logo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(BaseActivity.this, InicioMain.class);
+                    // Evita duplicados en el back stack
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(intent);
+                }
+            });
         }
     }
 
     protected void configurarBtnVolver() {
-        View headerView = findViewById(R.id.main_header);
-        if (headerView != null) {
-            ImageView volver = headerView.findViewById(R.id.btnVolver);
-            if (volver != null) {
-                volver.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        finish();
-                    }
-                });
-            }
+        ImageView volver = findViewById(R.id.btnVolver);
+        if (volver != null) {
+            volver.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
         }
     }
 

@@ -18,12 +18,6 @@
         <activity
             android:name=".CategoriaMain">
         </activity>
-        <activity
-            android:name=".DeportesMain">
-        </activity>
-        <activity
-            android:name=".AccionMain">
-        </activity>
         <activity android:name=".DetalleJuegoActivity" />
         <activity android:name=".SimulacionJuegoActivity" />
         <activity android:name=".EstadisticasJuego" />
@@ -32,9 +26,6 @@
         </activity>
         <activity
             android:name=".BaseActivity">
-        </activity>
-        <activity
-            android:name=".JuegoMain">
         </activity>
         <activity
             android:screenOrientation="portrait"
