@@ -23,6 +23,7 @@ public class EstadisticasJuego extends BaseActivity{
         setContentView(R.layout.estadisticasjuego);
 
         configurarLogoInicio();
+        configurarBotonCategorias();
         configurarBtnVolver();
         idJuego = getIntent().getIntExtra("idJuego",-1);
         ListView listaPartidas = findViewById(R.id.listaPartidas);

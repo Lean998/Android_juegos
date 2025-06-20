@@ -15,6 +15,7 @@ public class InformacionMain extends BaseActivity{
         tituloHeader.setText(R.string.btnInformacion);
 
         configurarLogoInicio();
+        configurarBotonCategorias();
         configurarBtnVolver();
     }
 }

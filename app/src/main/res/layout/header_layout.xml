@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="65dp"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginTop="0dp"
     android:background="#FFFFFF"
     android:orientation="horizontal"
@@ -20,12 +20,20 @@
         android:layout_weight="2"
         android:background="#FFFFFF"
         android:contentDescription="@string/categorias"
-        android:onClick="verCategorias"
         app:srcCompat="@drawable/volver" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_weight="2"
+        android:contentDescription="@string/app_name"
+        android:padding="5dp"
+        app:srcCompat="@drawable/menu" />
 
     <TextView
         android:id="@+id/hd_title"
-        android:layout_width="253dp"
+        android:layout_width="250dp"
         android:layout_height="42dp"
         android:layout_gravity="center_horizontal"
         android:layout_weight="2"
@@ -33,12 +41,18 @@
         android:textSize="30sp" />
 
     <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_weight="2"
+        android:contentDescription="@string/app_name" />
+
+    <ImageView
         android:id="@+id/imageView"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_weight="2"
         android:contentDescription="@string/app_name"
-        android:onClick="irInicio"
         app:srcCompat="@drawable/logo" />
 
 </LinearLayout>

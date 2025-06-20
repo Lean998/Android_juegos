@@ -36,6 +36,7 @@ public class DetalleJuegoActivity extends BaseActivity {
         setContentView(R.layout.activity_detalle_juego);
 
         configurarLogoInicio();
+        configurarBotonCategorias();
         configurarBtnVolver();
 
         textoInfo = findViewById(R.id.textoInfo);

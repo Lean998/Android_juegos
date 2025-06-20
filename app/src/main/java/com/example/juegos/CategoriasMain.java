@@ -17,6 +17,7 @@ public class CategoriasMain extends BaseActivity {
         TextView tituloHeader = findViewById(R.id.hd_title);
         tituloHeader.setText("Categorias");
         configurarLogoInicio();
+        configurarBotonCategorias();
         configurarBtnVolver();
     }
 

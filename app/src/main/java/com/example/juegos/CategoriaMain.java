@@ -60,6 +60,7 @@ public class CategoriaMain extends BaseActivity {
         recyclerJuegos.setAdapter(adapter);
 
         configurarLogoInicio();
+        configurarBotonCategorias();
         configurarBtnVolver();
 
     }

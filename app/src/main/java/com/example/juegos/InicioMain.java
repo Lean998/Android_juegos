@@ -16,6 +16,7 @@ public class InicioMain extends BaseActivity {
         setContentView(R.layout.inicio_main);
 
         configurarLogoInicio();
+        configurarBotonCategorias();
         configurarBtnVolver();
 
         DBPartidaHelper dbHelper = new DBPartidaHelper(this);

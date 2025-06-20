@@ -8,5 +8,5 @@
     <string name="rol">Rol</string>
     <string name="categorias">Categorias</string>
     <string name="btnJugar">Jugar</string>
-    <string name="btnInformacion">Información de la aplicación</string>
+    <string name="btnInformacion">Sobre Nosotros</string>
 </resources>

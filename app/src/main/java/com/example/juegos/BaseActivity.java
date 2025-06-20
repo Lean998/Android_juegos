@@ -28,6 +28,20 @@ public abstract class BaseActivity extends AppCompatActivity {
             });
         }
     }
+    protected void configurarBotonCategorias() {
+        ImageView catego = findViewById(R.id.imageView1);
+        if (catego != null) {
+            catego.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(BaseActivity.this, CategoriasMain.class);
+                    // Evita duplicados en el back stack
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    startActivity(intent);
+                }
+            });
+        }
+    }
 
     protected void configurarBtnVolver() {
         ImageView volver = findViewById(R.id.btnVolver);
