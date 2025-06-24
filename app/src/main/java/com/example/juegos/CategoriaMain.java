@@ -52,11 +52,12 @@ public class CategoriaMain extends BaseActivity {
             String nombre = cursor.getString(1);
             String descripcion = cursor.getString(2);
             int niveles = cursor.getInt(3);
-            listaJuegos.add(new JuegoClass(id, nombre, descripcion, "", niveles,v -> abrirJuego(id,nombre,descripcion,categoria,niveles)));
+
+            listaJuegos.add(new JuegoClass(id, nombre, descripcion, "", niveles, v -> abrirJuego(id,nombre,descripcion,categoria,niveles)));
         }
         cursor.close();
 
-        btnJuegoAdapter adapter = new btnJuegoAdapter(listaJuegos);
+        btnJuegoAdapter adapter = new btnJuegoAdapter(listaJuegos,CategoriaMain.this);
         recyclerJuegos.setAdapter(adapter);
 
         configurarLogoInicio();
@@ -161,11 +162,11 @@ public class CategoriaMain extends BaseActivity {
                 String nombre = cursor.getString(1);
                 String descripcion = cursor.getString(2);
                 int niveles = cursor.getInt(3);
-                listaJuegos.add(new JuegoClass(id, nombre, descripcion, "", niveles,v -> abrirJuego(id,nombre,descripcion,otraCategoria,niveles)));
+                listaJuegos.add(new JuegoClass(id, nombre, descripcion, otraCategoria, niveles,v -> abrirJuego(id,nombre,descripcion,otraCategoria,niveles)));
             }
             cursor.close();
 
-            btnJuegoAdapter adapter = new btnJuegoAdapter(listaJuegos);
+            btnJuegoAdapter adapter = new btnJuegoAdapter(listaJuegos,CategoriaMain.this);
             recyclerJuegos.setAdapter(adapter);
 
             container.addView(view, 0);

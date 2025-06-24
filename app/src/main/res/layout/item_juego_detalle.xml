@@ -6,6 +6,15 @@
     android:padding="24dp"
     android:background="#FFFFFF">
 
+
+    <TextView
+        android:id="@+id/tituloJuego"
+        android:layout_width="match_parent"
+        android:layout_height="117dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="34sp" />
+
     <ImageView
         android:id="@+id/imagenJuego"
         android:layout_width="match_parent"

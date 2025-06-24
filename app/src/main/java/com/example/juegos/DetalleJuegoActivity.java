@@ -1,8 +1,10 @@
 package com.example.juegos;
 
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -11,6 +13,8 @@ import android.widget.Toast;
 
 import androidx.viewpager.widget.ViewPager;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 
@@ -183,11 +187,21 @@ public class DetalleJuegoActivity extends BaseActivity {
             JuegoClass juego = juegosMismaCategoria.get(position);
 
             TextView textoInfoPager = view.findViewById(R.id.textoInfo);
+            TextView tituloJuego = view.findViewById(R.id.tituloJuego);
             Button btnJugarPager = view.findViewById(R.id.btnJugar);
             Button btnEstadisticasPager = view.findViewById(R.id.btnEstadisticas);
             ImageView imagenJuegoPager = view.findViewById(R.id.imagenJuego);
 
+            tituloJuego.setText(juego.getNombre());
             textoInfoPager.setText(juego.getDescripcion());
+            try {
+                AssetManager assetManager = getAssets();
+                InputStream inputStream = assetManager.open(juego.getGenero()+"/"+juego.getNombre().replace(" ","_")+".png");
+                Drawable drawable = Drawable.createFromStream(inputStream, null);
+                imagenJuegoPager.setImageDrawable(drawable);
+            } catch (IOException e) {
+
+            }
 
             btnJugarPager.setOnClickListener(v -> {
                 Intent intent = new Intent(DetalleJuegoActivity.this, SimulacionJuegoActivity.class);

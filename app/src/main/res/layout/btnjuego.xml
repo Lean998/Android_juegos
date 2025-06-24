@@ -19,7 +19,7 @@
             <ImageView
                 android:id="@+id/btnJuego"
                 android:layout_width="match_parent"
-                android:layout_height="128dp"
+                android:layout_height="150dp"
                 android:background="@drawable/bg_with_border"
                 android:padding="8dp"
                 android:scaleType="fitCenter"
@@ -34,12 +34,20 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="9dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="13dp"
+                android:scrollbarAlwaysDrawHorizontalTrack="true"
+                android:shadowColor="@color/white"
+                android:shadowDx="-5"
+                android:shadowDy="5"
+                android:shadowRadius="3"
                 android:text="Titulo del juego"
                 android:textAlignment="center"
-                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="20sp"
                 android:translationZ="2dp" />
         </RelativeLayout>
     </TableRow>
