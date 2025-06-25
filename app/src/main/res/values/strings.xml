@@ -9,8 +9,5 @@
     <string name="categorias">Categorias</string>
     <string name="btnJugar">Jugar</string>
     <string name="btnInformacion">Sobre Nosotros</string>
-<<<<<<< Updated upstream
-=======
     <string name="descripcionAplicacion">Aplicación para divertirte con distintos juegos organizados en categorías. Podés explorar las opciones, elegir un juego y empezar a jugar. También podés ver estadísticas de los últimos jugadores y registrar tu puntaje según el nivel y la dificultad que elijas. ¡Jugá, superate y volvé cuando quieras!</string>
->>>>>>> Stashed changes
 </resources>
