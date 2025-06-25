@@ -4,65 +4,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="#000A06"
     tools:context=".InicioMain">
 
     <ImageView
+        android:id="@+id/fondoInicio"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="0dp"
-        android:layout_height="176dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
         android:contentDescription="@string/btnInformacion"
         android:onClick="verInformacion"
-        app:layout_constraintBottom_toTopOf="@+id/imageView10"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/info" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="185dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="28dp"
         android:clickable="false"
         android:gravity="center"
         android:text="@string/btnInformacion"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@+id/imageView10"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="#FFECEC"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="@+id/fondoInicio" />
 
     <ImageView
         android:id="@+id/imageView10"
-        android:layout_width="197dp"
-        android:layout_height="179dp"
+        android:layout_width="90dp"
+        android:layout_height="78dp"
         android:layout_marginBottom="24dp"
         android:contentDescription="@string/btnJugar"
         android:onClick="verCategorias"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageView2"
+        app:layout_constraintVertical_bias="0.878"
         app:srcCompat="@drawable/play" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="158dp"
+        android:layout_height="66dp"
+        android:layout_marginBottom="40dp"
         android:text="@string/btnJugar"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

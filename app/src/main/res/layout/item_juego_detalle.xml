@@ -4,13 +4,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="24dp"
-    android:background="#FFFFFF">
+    android:background="#000A06">
 
 
     <TextView
         android:id="@+id/tituloJuego"
         android:layout_width="match_parent"
         android:layout_height="117dp"
+        android:background="@drawable/bg_with_border"
         android:text="TextView"
         android:textAlignment="center"
         android:textSize="34sp" />
@@ -18,7 +19,9 @@
     <ImageView
         android:id="@+id/imagenJuego"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_with_border"
+        android:layout_marginTop="20dp"
         android:contentDescription="Imagen del juego"
         android:src="@drawable/ic_launcher_background" />
 
@@ -27,6 +30,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:background="@drawable/bg_with_border"
+        android:padding="5dp"
         android:text="Descripción del juego..."
         android:textSize="16sp" />
 
