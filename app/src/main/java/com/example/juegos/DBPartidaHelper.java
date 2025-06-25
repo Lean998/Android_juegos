@@ -49,11 +49,6 @@ public class DBPartidaHelper extends SQLiteOpenHelper {
                     "('Deep Town', 'Deep Town es un juego de estrategia de ciencia ficción en el que juegas como una Inteligencia Artificial, con el único propósito de acumular recursos, construir y replicarse.', 'Estrategia', 10)," +
                     "('European War 6', 'El desarrollo de tecnologías como la máquina de vapor, el ferrocarril y los barcos ha llenado el mundo de nuevas oportunidades.\n" +
                     "Insatisfechos con los arreglos coloniales del Viejo Mundo, los imperios en ascenso se están preparando para competir. Inevitablemente, la guerra se convierte en el resultado de intereses en conflicto.\n" +
-<<<<<<< Updated upstream
-                    "El mundo entero no esperaba que la guerra creciera a una escala tan grande.\n" +
-                    "¿Podrían genios militares como Hindenburg, Ludendorff, Pétain, Foch, Haig y otros poner fin a la guerra?\n" +
-=======
->>>>>>> Stashed changes
                     "Revive intensas batallas militares históricas en la Primera Guerra Mundial. ¡Comandante! ¡Es hora de usar la estrategia ganadora y comenzar tu legendario viaje militar!', 'Estrategia', 10)," +
                     "('Slice & Dice', 'Controla a 5 héroes, cada uno con un dado único. Combate contra monstruos a través de 20 niveles e intenta vencer al jefe final. Si pierdes una sola pelea, tienes que empezar de nuevo, así que ten cuidado (¡y mucha suerte!).', 'Estrategia', 10)," +
 

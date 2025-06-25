@@ -18,26 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-<<<<<<< Updated upstream
-    <!-- ViewPager para moverse entre juegos -->
-
-    <!-- Se mantiene oculto cuando hay ViewPager -->
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPager_juegos"
-        android:layout_width="419dp"
-        android:layout_height="729dp"
-        android:layout_marginTop="66dp"
-        android:layout_marginBottom="65dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
-        android:id="@+id/layout_juego_unico"
-        android:layout_width="match_parent"
-=======
+    <!-- ViewPager (oculto cuando se muestra juego único) -->
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager_juegos"
         android:layout_width="0dp"
@@ -52,18 +33,13 @@
     <ScrollView
         android:id="@+id/scroll_juego_unico"
         android:layout_width="0dp"
->>>>>>> Stashed changes
         android:layout_height="0dp"
         android:visibility="gone"
-<<<<<<< Updated upstream
-=======
         android:fillViewport="true"
         app:layout_constraintTop_toBottomOf="@id/main_header"
->>>>>>> Stashed changes
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/main_header">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:id="@+id/layout_juego_unico"
